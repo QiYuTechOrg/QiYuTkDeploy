@@ -32,33 +32,6 @@ services:
         source: ./media
         target: /app/media
 
-  api:
-    image: qiyu_tbk:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-      network: host
-    container_name: tbk_api
-    restart: always
-    working_dir: /app/tbk
-    entrypoint: /app/entrypoints/api.sh
-    ports:
-      - "8002:8002"
-    env_file:
-      - envs/shared.env
-      - envs/custom.env
-    depends_on:
-      admin:
-        condition: service_healthy
-    healthcheck:
-      test: curl --fail http://127.0.0.1:8002/ping || exit 1
-    volumes:
-      - type: bind
-        source: ./logs
-        target: /app/logs
-      - type: bind
-        source: ./media
-        target: /app/media
 
   cron:
     image: qiyu_tbk:latest
