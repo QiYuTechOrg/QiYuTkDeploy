@@ -30,6 +30,9 @@ services:
       - type: bind
         source: ./media
         target: /app/media
+      - type: bind
+        source: ./sqlite
+        target: /app/sqlite
 
 
   cron:
@@ -54,6 +57,9 @@ services:
       - type: bind
         source: ./media
         target: /app/media
+      - type: bind
+        source: ./sqlite
+        target: /app/sqlite
 
 
   db:
