@@ -7,7 +7,6 @@ services:
       context: .
       dockerfile: Dockerfile
       network: host
-    container_name: tbk_admin
     restart: always
     working_dir: /app/tbk
     entrypoint: /app/entrypoints/admin.sh
@@ -39,7 +38,6 @@ services:
       context: .
       dockerfile: Dockerfile
       network: host
-    container_name: tbk_cron
     restart: always
     working_dir: /app/tbk
     entrypoint: /app/entrypoints/cron.sh
@@ -61,7 +59,6 @@ services:
   db:
     image: postgres:12.5
     restart: always
-    container_name: tbk_db
     environment:
       - POSTGRES_USER=tbk
       - POSTGRES_PASSWORD=tbk
