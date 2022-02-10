@@ -15,9 +15,9 @@ services:
     env_file:
       - envs/shared.env
       - envs/custom.env
-    depends_on:
-      db:
-        condition: service_started
+    #depends_on:
+    #  db:
+    #    condition: service_started
     healthcheck:
       test: curl --fail http://127.0.0.1:8001/ping/ || exit 1
       interval: 10s
