@@ -1,0 +1,7 @@
+{
+    "extensions": [
+        "redhat.vscode-yaml",
+        "bungcip.better-toml",
+        "EditorConfig.EditorConfig"
+    ]
+}
